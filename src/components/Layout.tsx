@@ -49,7 +49,7 @@ const Layout = (props: LayoutProps) => {
           {/* Footer */}
           <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
             <Container textAlign="center">
-              <p>Powered with <Icon name="heart" /> by Gatsby 2.0</p>
+              <p>Copyright &copy; 2019 DEIRTECH, LLC. All rights reserved.</p>
             </Container>
           </Segment>
         </Sidebar.Pusher>
