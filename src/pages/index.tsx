@@ -19,9 +19,9 @@ const IndexPage = (props: LayoutProps) =>
         Link={Link} pathname={props.location.pathname} items={menuItems} inverted
       />
       <Container text>
-        <Header inverted as="h1">Gatsby 2.0 - Starter kit</Header>
-        <Header inverted as="h2">Typescript - Jest - Semantic UI</Header>
-        <Button primary size="huge">Get started!</Button>
+        <Header inverted as="h1">DEIRTECH Consulting</Header>
+        <Header inverted as="h2">Web Development | Information Systems | Real Estate </Header>
+        <Button primary size="huge">Learn More!</Button>
       </Container>
     </Segment>
 
