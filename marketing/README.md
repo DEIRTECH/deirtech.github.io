@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+# Deirtech marketing site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The marketing site is a small React, TypeScript, and Vite application.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Run these commands from `marketing/`:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm ci
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+For the local quality checks and a production preview:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+npm test
+npm run lint
+npm run build
+npm run preview -- --host 127.0.0.1
 ```
+
+## Editing content
+
+- Edit public-facing site copy, navigation, optional contact CTA, and section labels in `src/content/site.ts`.
+- Add approved work in `src/content/projects.ts`. Only items with `status: "published"` appear on the page; when there are no published entries, both the Work navigation item and the Work section remain hidden.
+- Keep the Deirtech design tokens and component styles in `src/App.css`, with global typography and accessibility defaults in `src/index.css`.
+- Approved wordmark and arc artwork live under `public/assets/`. Geist and Geist Mono are bundled locally through Fontsource packages.
+- Canonical, social-sharing, and crawl metadata use `https://deirtech.com/` as the production URL.
+
+Do not invent client work, results, testimonials, contact details, or other public claims. Keep all future case-study facts in the content modules instead of embedding them in layout components.
+
+## Deployment boundary
+
+This site is already published by an existing Netlify integration. Its project settings, repository connection, build settings, environment variables, domain, and DNS are managed outside this repository and must not be changed as part of normal site work.
+
+Local implementation, committing, pushing, the Netlify deployment, and public verification are separate steps. A push or deploy requires explicit approval; after an approved deployment, verify the live site independently before describing it as published.

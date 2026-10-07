@@ -136,4 +136,8 @@ $RECYCLE.BIN/
 
 ### Gatsby ###
 public
+
+# Vite source assets for the Deirtech marketing site (not generated output)
+!marketing/public/
+!marketing/public/**
 .cache
